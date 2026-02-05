@@ -1,32 +1,41 @@
 {
-    "name": "react-animated-github-calendar",
-    "version": "1.0.0",
-    "description": "An animated Github contribution calendar component that can be added your ReactJS web apps.",
-    "keywords": [
-        "ReactJS",
-        "Github",
-        "Calendar",
-        "component",
-        "easy"
-    ],
-    "homepage": "https://github.com/KarkAngelo114/react-animated-github-calendar#readme",
-    "bugs": {
-        "url": "https://github.com/KarkAngelo114/react-animated-github-calendar/issues"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/KarkAngelo114/react-animated-github-calendar.git"
-    },
-    "license": "MIT",
-    "author": "Kark Angelo V. Pada",
-    "dependencies": {
-        "framer-motion": "12.31.1",
-        "react-intersection-observer": "10.0.2"
-    },
-    "main": "./index.jsx",
-    "types": "./index.d.ts",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "publish":"npm publish"
+  "name": "react-animated-github-calendar",
+  "version": "1.0.2",
+  "description": "An animated Github contribution calendar component that can be added your ReactJS web apps.",
+  "keywords": ["ReactJS", "Github", "Calendar", "component", "easy"],
+  "license": "MIT",
+
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
     }
+  },
+
+  "files": ["dist"],
+
+  "dependencies": {
+    "framer-motion": "12.31.1",
+    "react-intersection-observer": "10.0.2"
+  },
+
+  "peerDependencies": {
+    "react": ">=17",
+    "react-dom": ">=17"
+  },
+
+  "scripts": {
+    "build": "tsup src/index.jsx --format esm,cjs --dts --external react,react-dom"
+  },
+
+
+  "devDependencies": {
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  }
 }
