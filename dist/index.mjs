@@ -1,5 +1,5 @@
-// index.jsx
-import { useEffect, useState } from "react";
+// src/index.jsx
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 var AnimatedGithubCalendar = ({

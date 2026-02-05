@@ -1,6 +1,8 @@
+var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __export = (target, all) => {
   for (var name in all)
@@ -14,15 +16,23 @@ var __copyProps = (to, from, except, desc) => {
   }
   return to;
 };
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-// index.jsx
+// src/index.jsx
 var index_exports = {};
 __export(index_exports, {
   AnimatedGithubCalendar: () => AnimatedGithubCalendar
 });
 module.exports = __toCommonJS(index_exports);
-var import_react = require("react");
+var import_react = __toESM(require("react"));
 var import_framer_motion = require("framer-motion");
 var import_react_intersection_observer = require("react-intersection-observer");
 var AnimatedGithubCalendar = ({
@@ -55,7 +65,7 @@ var AnimatedGithubCalendar = ({
       setLoading(false);
     }
   };
-  if (loading) return /* @__PURE__ */ React.createElement("div", null, "Loading...");
+  if (loading) return /* @__PURE__ */ import_react.default.createElement("div", null, "Loading...");
   if (!data) return null;
   const containerVariants = {
     visible: {
@@ -78,7 +88,7 @@ var AnimatedGithubCalendar = ({
       data.contributions.flat().map((d) => d.contributionCount > 0 ? d.color : "#333")
     )
   ];
-  return /* @__PURE__ */ React.createElement("div", { style: {
+  return /* @__PURE__ */ import_react.default.createElement("div", { style: {
     padding: "20px",
     backgroundColor: "#252525fe",
     borderRadius: "20px",
@@ -88,14 +98,14 @@ var AnimatedGithubCalendar = ({
     // Prevents the card itself from pushing the page out
     overflow: "hidden"
     // Clips any accidental overflow from the title/padding
-  } }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("p", { style: { color: "white", fontWeight: "bolder", fontSize: "1.5rem" } }, "Contribution Activity")), /* @__PURE__ */ React.createElement("div", { ref, style: {
+  } }, /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("p", { style: { color: "white", fontWeight: "bolder", fontSize: "1.5rem" } }, "Contribution Activity")), /* @__PURE__ */ import_react.default.createElement("div", { ref, style: {
     overflowX: "auto",
     overflowY: "hidden",
     boxSizing: "border-box",
     width: "100%",
     WebkitOverflowScrolling: "touch",
     paddingBottom: "10px"
-  } }, /* @__PURE__ */ React.createElement(
+  } }, /* @__PURE__ */ import_react.default.createElement(
     import_framer_motion.motion.div,
     {
       initial: "hidden",
@@ -108,7 +118,7 @@ var AnimatedGithubCalendar = ({
       }
     },
     data.contributions.map((week, i) => {
-      return /* @__PURE__ */ React.createElement(
+      return /* @__PURE__ */ import_react.default.createElement(
         import_framer_motion.motion.div,
         {
           key: i,
@@ -122,7 +132,7 @@ var AnimatedGithubCalendar = ({
             gap: `${blockMargin}px`
           }
         },
-        week.map((day, j) => /* @__PURE__ */ React.createElement(
+        week.map((day, j) => /* @__PURE__ */ import_react.default.createElement(
           "div",
           {
             key: j,
@@ -142,7 +152,7 @@ var AnimatedGithubCalendar = ({
         ))
       );
     })
-  )), /* @__PURE__ */ React.createElement("div", { style: { marginTop: "15px", fontSize: "12px", color: "white", opacity: 0.7, display: "flex", justifyContent: "space-between", alignItems: "center" } }, /* @__PURE__ */ React.createElement("div", { style: { width: "100%", boxSizing: "border-box" } }, /* @__PURE__ */ React.createElement("p", null, "Total Contributions: ", data.totalContributions)), /* @__PURE__ */ React.createElement("div", { style: { width: "100%", boxSizing: "border-box", display: "flex", justifyContent: "flex-end", alignItems: "center", gap: "10px" } }, /* @__PURE__ */ React.createElement("p", null, "Less"), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 4 } }, legendColors.map((color, i) => /* @__PURE__ */ React.createElement(
+  )), /* @__PURE__ */ import_react.default.createElement("div", { style: { marginTop: "15px", fontSize: "12px", color: "white", opacity: 0.7, display: "flex", justifyContent: "space-between", alignItems: "center" } }, /* @__PURE__ */ import_react.default.createElement("div", { style: { width: "100%", boxSizing: "border-box" } }, /* @__PURE__ */ import_react.default.createElement("p", null, "Total Contributions: ", data.totalContributions)), /* @__PURE__ */ import_react.default.createElement("div", { style: { width: "100%", boxSizing: "border-box", display: "flex", justifyContent: "flex-end", alignItems: "center", gap: "10px" } }, /* @__PURE__ */ import_react.default.createElement("p", null, "Less"), /* @__PURE__ */ import_react.default.createElement("div", { style: { display: "flex", gap: 4 } }, legendColors.map((color, i) => /* @__PURE__ */ import_react.default.createElement(
     "div",
     {
       key: i,
@@ -154,7 +164,7 @@ var AnimatedGithubCalendar = ({
         border: "1px solid rgba(255,255,255,0.1)"
       }
     }
-  ))), /* @__PURE__ */ React.createElement("p", null, "More"))));
+  ))), /* @__PURE__ */ import_react.default.createElement("p", null, "More"))));
 };
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
